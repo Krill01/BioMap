@@ -1,2 +1,9 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username %>
+  <%= f.input :query %>
+  <%= f.input :restaurant, as: :radio_buttons, collection: [['0', 'no'], ['1', 'yes']], label_method: :second, value_method: :first %>
+  <%= f.button :submit %>
+<% end %>
