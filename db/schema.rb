@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_05_31_124615) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 2022_05_31_124615) do
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
-
 
   create_table "favorites", force: :cascade do |t|
     t.string "category"
@@ -83,10 +81,9 @@ ActiveRecord::Schema.define(version: 2022_05_31_124615) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-  
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-
   add_foreign_key "favorites", "producers"
   add_foreign_key "favorites", "users"
 end
