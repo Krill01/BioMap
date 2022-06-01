@@ -7,7 +7,11 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+<<<<<<< HEAD
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+=======
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=McLaren&display=swap');
+>>>>>>> master
 
 // Your CSS partials
 @import "components/index";
