@@ -1,0 +1,18 @@
+
+
+<h1>index</h1>
+
+
+<div id="map">
+
+</div>
+
+
+
+<script>
+  fetch('/pages/producteurs')
+    .then(response => response.json())
+    .then(json => {
+      console.log(json)
+    })
+</script>
