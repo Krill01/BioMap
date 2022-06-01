@@ -1,4 +1,19 @@
+
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<%= render "shared/search_bar" %>
+<div class="banner">
+  <div class="container">
+    <div class="logo">
+      <%# <%= image_tag('sleep.svg', size:'80') %>
+      <h1 class='biomap'>BioMap</h1>
+    </div>
+    <h2><em>Find local organic farmers nearby!</em> 👩🏼‍🌾</h2>
+    <%= link_to "Connexion", "#", class: "btn btn-flat" %>
+    <%= link_to "SignUp", "#", class: "btn btn-flat" %>
+    <p>Searchbar will be here.</p>
+    <%= render "shared/search_bar" %>
+  </div>
+</div>
+
+<p>3 cards.</p>
