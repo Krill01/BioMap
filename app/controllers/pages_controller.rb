@@ -18,10 +18,10 @@ class PagesController < ApplicationController
     address = params[:search][:address]
     address_to_geo = Geocoder.search(address)
     coordinates = address_to_geo.first.coordinates #ARRAY
-    @coordinates_hash = [{
+    @coordinates_hash = {
       lat: coordinates[0],
       lng: coordinates[1]
-    }]
+    }
     lattitude = coordinates[0]
     longitude = coordinates[1]
 
