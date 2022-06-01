@@ -30,17 +30,17 @@ class PagesController < ApplicationController
     # restaurant = "&filtrerRestaurants=1"
   end
 
-  def producteurs
-    map_data
-    render json: @data
-  end
+  # def producteurs
+  #   map_data
+  #   render json: @data
+  # end
 
-  def map_data
-    sleep(2)
-    @data = [
-      {
-        name:
-      }
-    ]
-  end
+  # def map_data
+  #   sleep(2)
+  #   @data = [
+  #     {
+  #       name:
+  #     }
+  #   ]
+  # end
 end
