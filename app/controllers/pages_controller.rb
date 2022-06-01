@@ -25,7 +25,7 @@ class PagesController < ApplicationController
     lattitude = coordinates[0]
     longitude = coordinates[1]
 
-    @search_url = "https://opendata.agencebio.org/api/gouv/operateurs/?#{produit_search}lat=#{lattitude}&lng=#{longitude}&nb=50&trierPar=%2F%2Fcoords&ordreTri=%2F%2Fdesc&filtrerVenteDetail=1"
+    @search_url = "https://opendata.agencebio.org/api/gouv/operateurs/?#{produit_search}lat=#{lattitude}&lng=#{longitude}&nb=50&filtrerVenteDetail=1"
   end
 
     # Renaud GEOCODED / MAPBOX
