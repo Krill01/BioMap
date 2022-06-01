@@ -1,11 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from "mapbox-gl"
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 
 export default class extends Controller {
   static values = {
     apiKey: String,
-    location: Array,
+    location: Object,
     apiUrl: String,
   }
 
@@ -14,14 +13,11 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
+      zoom: 10,
+      center: this.locationValue,
       style: "mapbox://styles/mapbox/streets-v10"
     })
-    this.#addLocationToMap()
-    this.#fitMapToLocation()
-    this.map.addControl(new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl
-    }))
+    this.addLocationToMap()
     this.searchProducer()
   }
 
@@ -30,54 +26,35 @@ export default class extends Controller {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-      this.addMarkersToMap(data);
-      this.fitMapToMarkers(data);
+      this.addMarkersToMap(data)
+      // this.fitMapToMarkers(data)
     })
   }
 
   addMarkersToMap(data) {
-    data["items"].forEach((marker) => {
-      console.log(marker["adressesOperateurs"][0]["long"])
-      console.log(marker["adressesOperateurs"][0]["lat"])
-      // const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+    data["items"].forEach((productor) => {
+      const popup = new mapboxgl.Popup()
+                        .setHTML(`<div><h1>${productor['denominationcourante']}</h1> <button>ici</button> </div>`)
       // Create a HTML element for your custom marker
-      // const customMarker = document.createElement("div")
-      // customMarker.className = "marker"
-      // customMarker.style.backgroundImage = `url('${marker.image_url}')`
-      // customMarker.style.backgroundSize = "contain"
-      // customMarker.style.width = "25px"
-      // customMarker.style.height = "25px"
       new mapboxgl.Marker()
-        .setLngLat([marker["adressesOperateurs"][0]["long"], marker["adressesOperateurs"][0]["lat"]])
-        // .setPopup(popup)
+        .setLngLat([productor["adressesOperateurs"][0]["long"], productor["adressesOperateurs"][0]["lat"]])
+        .setPopup(popup)
         .addTo(this.map)
+
+      const favorite = () => {
+        console.log('je veux mettre e favoris ce truc', productor)
+      }
+
+      popup.on('open', () => {
+        const buttonFavorite = popup.getElement().querySelector('button')
+        buttonFavorite.addEventListener('click', favorite)
+      });
     });
   }
 
-  fitMapToMarkers(data) {
-    const bounds = new mapboxgl.LngLatBounds()
-    data["items"].forEach(marker => bounds.extend([marker["adressesOperateurs"][0]["long"], marker["adressesOperateurs"][0]["lat"]]))
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 100 })
+  addLocationToMap() {
+    new mapboxgl.Marker({ "color": "#FD1015" })
+      .setLngLat([this.locationValue.lng, this.locationValue.lat])
+      .addTo(this.map)
   }
-
-
-  #addLocationToMap() {
-    this.locationValue.forEach((location) => {
-      // const customLocation = document.createElement("div")
-      // customLocation.className = "location"
-      // customLocation.style.backgroundSize = "contain"
-      // customLocation.style.width = "25px"
-      // customLocation.style.height = "25px"
-      new mapboxgl.Marker()
-        .setLngLat([location.lng, location.lat])
-        .addTo(this.map)
-    });
-  }
-
-  #fitMapToLocation() {
-    const bounds = new mapboxgl.LngLatBounds()
-    this.locationValue.forEach(location => bounds.extend([location.lng, location.lat]))
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
-  }
-
 }
