@@ -1,0 +1,5 @@
+<%= simple_form_for :search,  url: pages_path , method: :get do |f| %>
+  <%= f.input :produit, collection: [ "pain", "viande", "lait"] %>
+  <%= f.input :address %>
+  <%= f.submit "search" %>
+<% end %>
