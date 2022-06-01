@@ -1,10 +1,11 @@
 // Specific CSS for your home-page
 
 .banner{
-  background-image: url('crop.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.1)), url('crop.jpg');
   background-size: cover;
   background-position: center;
-  padding: 116px 0;
+  height: 56vh;
+  padding-top: 1vh;
 }
 
 .banner h1 {
@@ -21,4 +22,12 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
 }
