@@ -1,10 +1,11 @@
 // Specific CSS for your home-page
+body{
+  background-color: rgb(34, 33, 33);
+  background-size: cover;
+}
 
 .banner{
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.1)), url('crop.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 56vh;
+  height: 100vh;
   padding-top: 1vh;
 }
 
