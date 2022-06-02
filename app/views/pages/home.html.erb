@@ -4,10 +4,11 @@
     <%= link_to "SignUp", "#", class: "btn btn-ghost"%>
   </div>
   <div class="logo">
+    <%=image_tag('sleep.svg')%>
     <h1 class='biomap'>BioMap</h1>
   </div>
   <div class="moto">
-    <h2><em>Find local organic farmers nearby!</em> 👩🏼‍🌾</h2>
+    <h2>Find local organic farmers nearby.</h2>
   </div>
   <div class="searchbar">
     <form action="/pages" >
@@ -17,4 +18,17 @@
   </div>
 </div>
 
-<p>3cards</p>
+
+<div class="content">
+  <div class="card">
+    <div class="icon"><i class="fa fa-leaf"></i></div>
+    <p class="title">Bio products</p>
+    <p class="text">Bio crops certified by Ministry of Agriculture.</p>
+  </div>
+  <div class="card">
+    <div class="icon"><i class="fa fa-tractor"></i></div>
+      <p class="title">Local farmers</p>
+      <p class="text">Consume local products wherever you are.</p>
+    </div>
+  </div>
+</div>
