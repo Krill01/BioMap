@@ -1,6 +1,15 @@
+.button{
+  padding-right: 10px;
+}
+
+.btn {
+  margin-left: 6px;
+  font-size: 12px;
+}
+
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  color: #e0dede;
+  border: 1px solid #e0dede;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -10,33 +19,5 @@
 
 .btn-ghost:hover {
   opacity: 1;
-}
-
-.btn-flat {
-  font-size: 13px;
-  color: white;
-  padding: 7px 18px;
-  border-radius: 4px;
-  background: #639780;
-  transition: background 0.3s ease;
-}
-
-.btn-flat:hover {
-  background: #1BCB7F;
-  color: white;
-}
-
-.btn-gradient {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
-  transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
-}
-
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
+  color: #e0dede;
 }
