@@ -1,16 +1,21 @@
 .logo {
  height: 7em;
- background-image: url('sleep.svg');
- background-size: cover;
- background-position: center;
+//  background-image: red, url('sleep.svg');
+//  background-size: cover;
+//  background-position: center;
  display: flex;
  justify-content: center;
- background-size: contain;
- background-repeat: no-repeat;
+//  background-size: contain;
+//  background-repeat: no-repeat;
  margin-top: 4em;
- filter: drop-shadow(2px 4px 6px black);
+//  filter: color(black);
+//  drop-shadow(2px 4px 6px rgb(226, 218, 218));
 }
 
+.logo img {
+  color:red;
+}
 .logo h1 {
   padding-top: 1em;
+  position: absolute;
 }
