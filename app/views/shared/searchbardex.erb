@@ -1,0 +1,38 @@
+Original
+ <div class="searchbar">
+    <form action="/pages" >
+      <input type="search" required :address>
+      <i class="fa fa-search"></i>
+    </form>
+  </div>
+
+Tentative 0
+<div class="searchbar">
+  <form action="/pages" >
+    <input type="search" placeholder="Type an address here" required :address>
+    <%=button_tag() do %>
+      <i class="fa fa-search"></i>
+    <% end %>
+  </form>
+</div>
+
+Tentative 1
+<div class="searchbar">
+  <form action="/pages" >
+    <input type="search" placeholder="Type an address here" required :address>
+    <button>
+      <input type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </form>
+</div>
+
+#tentative 2
+<div class="searchbar">
+  <form action="/pages" >
+    <input type="search" placeholder="Type an address here" required :address>
+    <a href="/pages">
+      <i class="fa fa-search"></i>
+    </a>
+  </form>
+</div>
