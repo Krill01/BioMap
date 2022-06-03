@@ -1,0 +1,12 @@
+<div>
+  <h2><%= producer['denominationcourante'] %></h2>
+
+  productions:
+  <ul>
+    <% producer["productions"].each do |production| %>
+      <li>
+        <%= production["nom"] %>
+      </li>
+    <% end %>
+  </ul>
+</div>

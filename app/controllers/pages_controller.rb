@@ -8,13 +8,6 @@ class PagesController < ApplicationController
   end
 
   def index
-    produit = params[:search][:produit]
-    if produit == ""
-      produit_search = ""
-    else
-      produit_search = "produit=#{produit}&"
-    end
-    # use geocoder to get address
     address = params[:search][:address]
     address_to_geo = Geocoder.search(address)
     coordinates = address_to_geo.first.coordinates #ARRAY
@@ -22,35 +15,5 @@ class PagesController < ApplicationController
       lat: coordinates[0],
       lng: coordinates[1]
     }
-    lattitude = coordinates[0]
-    longitude = coordinates[1]
-
-    @search_url = "https://opendata.agencebio.org/api/gouv/operateurs/?#{produit_search}lat=#{lattitude}&lng=#{longitude}&nb=50&filtrerVenteDetail=1"
   end
-
-    # Renaud GEOCODED / MAPBOX
-    # @Producers = Producer.all
-    # # the `geocoded` scope filters only producers with coordinates(latitude & longitude)
-    # @markers = @producers.geocoded.map do | producer |
-    #   {
-    #     lat: producer.latitude,
-    #     lng: producer.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: { producer: producer })
-    #     image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
-    #   }
-
-
-    # def producteurs
-    #   map_data
-    #   render json: @data
-    # end
-
-    # def map_data
-    #   sleep(2)
-    #   @data = [
-    #     {
-    #       name:
-    #     }
-    #   ]
-    # end
 end
