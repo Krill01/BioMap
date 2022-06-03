@@ -1,8 +1,17 @@
 <div>
-  <h2><%= producer['denominationcourante'] %></h2>
+  <h3><%= producer['denominationcourante'] %></h3>
+  <p><strong>Categories:</strong></p>
+    <ul style="list-style: none;">
+    <% categories = producer['productions'].map {|production| production['category']}.uniq %>
+    <% categories.each do |category|%>
+      <li>
+      <%= category %>
+      </li>
+    <% end %>
+  </ul>
 
-  productions:
-  <ul>
+  <p><strong>Productions:</strong></p>
+  <ul style="list-style: none;">
     <% producer["productions"].each do |production| %>
       <li>
         <%= production["nom"] %>
