@@ -1,5 +1,13 @@
-<div style="width: 100%; height: 100vh;"
-  data-controller="mapbox"
-  data-mapbox-location-value="<%= @coordinates_hash.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+
+<div class="index">
+  <div class="filter-column">
+
+  </div>
+
+  <div class="map" style="width:100%; height: 100vh;"
+    data-controller="mapbox"
+    data-mapbox-location-value="<%= @coordinates_hash.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-mapbox-api-url-value="<%= @search_url %>"
+    ></div>
+</div>
