@@ -1,7 +1,7 @@
 <div>
   <h3><%= producer['denominationcourante'] %></h3>
   <p><strong>Categories:</strong></p>
-    <ul style="list-style: none;">
+    <ul class="popup-infos" style="list-style: none;">
     <% categories = producer['productions'].map {|production| production['category']}.uniq %>
     <% categories.each do |category|%>
       <li>
