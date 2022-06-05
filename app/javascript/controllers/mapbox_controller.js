@@ -14,7 +14,6 @@ export default class extends Controller {
     this.marker = null
     this.map = new mapboxgl.Map({
       container: this.element,
-      mapbox-update
       zoom: 11,
       center: this.center,
       style: "mapbox://styles/mapbox/streets-v10"
@@ -48,7 +47,7 @@ export default class extends Controller {
       this.addLocationToMap()
       this.searchProducer()
     })
-    }
+  }
 
   addLocationToMap() {
     new mapboxgl.Marker({ "color": "#FD1015" })
