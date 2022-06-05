@@ -1,6 +1,6 @@
 .filter-column {
   padding: 1rem 1rem;
-  background-color: #1e1919;
+  background-color: $awesome-black;
   width:30%;
   h3 {
     color: white;
@@ -19,10 +19,10 @@
 
 .check + label {
   cursor: pointer;
-  color: #73dc8c;
+  color: $awesome-green;
   // width: 100%;
   background-color: none;
-  border: 1px #73dc8c solid;
+  border: 1px $awesome-green solid;
   margin-right: 0.2rem;
   margin-bottom: 0.4rem;
   padding: 0.2rem 0.6rem;
@@ -32,6 +32,6 @@
 }
 
 .check:checked + label {
-  color: #1e1919;
-  background-color: #73dc8c;
+  color: $awesome-black;
+  background-color: $awesome-green;
 }
