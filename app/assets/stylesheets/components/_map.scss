@@ -1,8 +1,20 @@
 .mapboxgl-popup {
   max-width: 200px;
+  border-radius: 8px;
 }
 
-.mapboxgl-popup-content {
+.mapboxgl-popup-content h2 {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: $headers-font;
+}
+
+.mapboxgl-popup-content .popup-infos {
+  text-align: left;
+  font-family: $body-font;
+}
+
+.mapboxgl-ctrl-geocoder {
+  justify-content: center;
+  width: 300px;
+  border-radius: 16px;
 }
