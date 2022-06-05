@@ -1,11 +1,11 @@
-- name: céréales
+- name: cereales
   codes:
     - "01.12.1"
     - "10.61.1"
     - "10.61.2"
     - "10.61.3"
     - "01.11"
-- name: légumes
+- name: legumes
   codes:
     - "01.13.1"
     - "01.13.4"
@@ -39,7 +39,7 @@
     - "01.30.1"
     - "02.30.3"
     - "02.30.4"
-- name: fruits à coque
+- name: fruits a coque
   codes:
     - "01.25.3"
     - "01.26.1"
@@ -95,7 +95,7 @@
     - "11.03.1"
     - "11.05.1"
     - "11.07"
-- name: épicerie fine
+- name: epicerie fine
   codes:
     - "01.28"
     - "11.02.1"
@@ -107,7 +107,7 @@
 - name: condiments
   codes:
     - "10.84"
-- name: plats préparés
+- name: plats prepares
   codes:
     - "10.85"
     - "10.86"

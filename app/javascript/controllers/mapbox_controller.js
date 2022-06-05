@@ -38,8 +38,12 @@ export default class extends Controller {
   addProducersToMap(data) {
     data.forEach((producer) => {
       const popup = new mapboxgl.Popup()
+      // need to put filter targets in html in order to filter the markers
                         .setHTML(producer.popup_html)
       // Create a HTML element for your custom marker
+      const customMarker = document.createElement("div")
+      customMarker.data = "filter"
+
       new mapboxgl.Marker()
         .setLngLat([producer["adressesOperateurs"][0]["long"], producer["adressesOperateurs"][0]["lat"]])
         .setPopup(popup)
