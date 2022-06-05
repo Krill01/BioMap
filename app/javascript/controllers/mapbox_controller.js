@@ -68,6 +68,7 @@ export default class extends Controller {
   addProducersToMap(data) {
     data.forEach((producer) => {
       const popup = new mapboxgl.Popup()
+      // need to put filter targets in html in order to filter the markers
                         .setHTML(producer.popup_html)
       // Create a HTML element for your custom marker
       this.marker = new mapboxgl.Marker()

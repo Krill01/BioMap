@@ -1,0 +1,37 @@
+.filter-column {
+  padding: 1rem 1rem;
+  background-color: #1e1919;
+  width:30%;
+  h3 {
+    color: white;
+  }
+}
+
+.cat-items {
+  display: inline-block;
+  text-align: center;
+}
+
+.check {
+  position: absolute;
+  transform: scale(0);
+}
+
+.check + label {
+  cursor: pointer;
+  color: #73dc8c;
+  // width: 100%;
+  background-color: none;
+  border: 1px #73dc8c solid;
+  margin-right: 0.2rem;
+  margin-bottom: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  text-align: center;
+  border-radius: 50rem;
+  font-size: 1rem;
+}
+
+.check:checked + label {
+  color: #1e1919;
+  background-color: #73dc8c;
+}
