@@ -1,20 +1,117 @@
-.mapboxgl-popup {
-  max-width: 200px;
+.mapboxgl-popup-content {
+  width: 350px;
   border-radius: 8px;
 }
-
-.mapboxgl-popup-content h2 {
-  text-align: center;
-  font-family: $headers-font;
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  border-bottom-color: $awesome-black;
 }
-
-.mapboxgl-popup-content .popup-infos {
-  text-align: left;
-  font-family: $body-font;
+.mapboxgl-popup-content {
+  background-color: $awesome-black;
+  color: white;
 }
 
 .mapboxgl-ctrl-geocoder {
   justify-content: center;
   width: 300px;
   border-radius: 16px;
+}
+
+.popup-banner {
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+  // margin-bottom: 8px;
+}
+
+.producer-infos {
+  font-family: $body-font;
+  color: white;
+  padding: 8px;
+  border-bottom: 1px solid #ffffff;
+  p{
+    margin: 0;
+  }
+
+}
+
+.product-infos {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 8px;
+  .category{
+    text-align: left;
+    font-family: $body-font;
+    padding: 8px;
+    border-radius: 8px;
+    font-family: $body-font;
+    background-color: $awesome-green;
+    color: $awesome-black;
+    width: 35%;
+    white-space: nowrap;
+    overflow: hidden;
+    p {
+        margin-bottom: 8px;
+        border-bottom: 1px solid $awesome-black;
+    }
+    ul {
+      padding-left: 0;
+      margin: 0;
+      li {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  .productions{
+    text-align: left;
+    font-family: $body-font;
+    padding: 8px;
+    margin-left: 8px;
+    width: 65%;
+    border-radius: 8px;
+    font-family: $body-font;
+    color: $awesome-green;
+    border: 1px solid $awesome-green;
+    white-space: nowrap;
+    overflow: hidden;
+    p {
+      margin-bottom: 8px;
+      border-bottom: 1px solid $awesome-green;
+    }
+    ul{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 0;
+      margin: 0;
+      li{
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+.popup-footer {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.navigation {
+  // margin-right: 50px;
+  text-decoration: none;
+  font-family: $body-font;
+  color: white;
+  padding: 8px 48px;
+  border-radius: 50px;
+  font-weight: bold;
+  background-color: #4b78e6;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  border: 1px solid #4b78e6;
+}
+
+.navigation:hover {
+  opacity: 0.8;
 }

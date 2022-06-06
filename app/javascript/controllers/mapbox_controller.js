@@ -14,7 +14,6 @@ export default class extends Controller {
     this.marker = null
     this.map = new mapboxgl.Map({
       container: this.element,
-      mapbox-update
       zoom: 11,
       center: this.center,
       style: "mapbox://styles/mapbox/streets-v10"
@@ -48,10 +47,9 @@ export default class extends Controller {
       this.addLocationToMap()
       this.searchProducer()
     })
-    }
-
+  }
   addLocationToMap() {
-    new mapboxgl.Marker({ "color": "#FD1015" })
+    new mapboxgl.Marker({ "color": "#73DC8C" })
       .setLngLat([this.center.lng, this.center.lat])
       .addTo(this.map)
   }
@@ -71,7 +69,7 @@ export default class extends Controller {
       // need to put filter targets in html in order to filter the markers
                         .setHTML(producer.popup_html)
       // Create a HTML element for your custom marker
-      this.marker = new mapboxgl.Marker()
+      this.marker = new mapboxgl.Marker({ "color": "#4b78e6" })
         .setLngLat([producer["adressesOperateurs"][0]["long"], producer["adressesOperateurs"][0]["lat"]])
         .setPopup(popup)
         .addTo(this.map)
