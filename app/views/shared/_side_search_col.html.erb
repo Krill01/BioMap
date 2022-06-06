@@ -1,5 +1,5 @@
 <div class="filter-column">
-  <h3>Catégories</h3>
+  <h3>Catégories:</h3>
   <div class="cat-items">
     <% @categories.each do |category|  %>
         <%= check_box_tag "#{category.split(' ').join('-')}", "#{category}", true, class:"check"%><label for=<%="#{category.split(' ').join('-')}"%>><%= category %></label>
