@@ -9,6 +9,7 @@ export default class extends Controller {
   }
 
   connect() {
+    this.markers = []
     mapboxgl.accessToken = this.apiKeyValue
     this.center = this.locationValue
     this.marker = null
@@ -38,11 +39,9 @@ export default class extends Controller {
         }
       this.map.setCenter([this.center.lng, this.center.lat])
       this.map.setZoom(11)
-      // POURQUOI CA MARCHE PAS ????
-      // this.marker.remove()
-      // docMapBox =>
-      // const popup = new mapboxgl.Popup().addTo(map);
-      // popup.remove();
+
+      this.location.remove()
+      this.markers.forEach((marker) => {marker.remove()})
 
       this.addLocationToMap()
       this.searchProducer()
@@ -50,7 +49,7 @@ export default class extends Controller {
   }
 
   addLocationToMap() {
-    new mapboxgl.Marker({ "color": "#73DC8C" })
+    this.location = new mapboxgl.Marker({ "color": "#73DC8C" })
       .setLngLat([this.center.lng, this.center.lat])
       .addTo(this.map)
   }
@@ -74,16 +73,15 @@ export default class extends Controller {
         .setLngLat([producer["adressesOperateurs"][0]["long"], producer["adressesOperateurs"][0]["lat"]])
         .setPopup(popup)
         .addTo(this.map)
-
-
-      // const favorite = () => {
-      //   console.log('je veux mettre e favoris ce truc', productor)
-      // }
-
-      // popup.on('open', () => {
-      //   const buttonFavorite = popup.getElement().querySelector('button')
-      //   buttonFavorite.addEventListener('click', favorite)
-      // });
+      this.markers.push(this.marker)
     });
   }
 }
+// const favorite = () => {
+//   console.log('je veux mettre e favoris ce truc', productor)
+// }
+
+// popup.on('open', () => {
+//   const buttonFavorite = popup.getElement().querySelector('button')
+//   buttonFavorite.addEventListener('click', favorite)
+// });
