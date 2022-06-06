@@ -71,8 +71,8 @@
   color: white;
   font-weight: 200;
   letter-spacing: 2px;
-  opacity: 0;
-  max-height:0;
+  opacity: 1;
+  max-height:40px;
   transition: all 0.3s ease;
   font-family: Poiret One;
 }
@@ -83,12 +83,6 @@
 
 .card:hover .info {
   height: 90%;
-}
-
-.card:hover .text {
-  transition: all 0.3s ease;
-  opacity: 1;
-  max-height:40px;
 }
 
 .card:hover .icon {
