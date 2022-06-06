@@ -48,6 +48,7 @@ export default class extends Controller {
       this.searchProducer()
     })
   }
+
   addLocationToMap() {
     new mapboxgl.Marker({ "color": "#73DC8C" })
       .setLngLat([this.center.lng, this.center.lat])

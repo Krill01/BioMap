@@ -1,43 +1,43 @@
 <div class="banner">
-  <div class="button">
-    <%= link_to "Connexion", "#", class: "btn btn-ghost"%>
-    <%= link_to "SignUp", "#", class: "btn btn-ghost"%>
-  </div>
-  <div class="logo">
-    <%=image_tag('sleep.svg')%>
+  <div class="logo-container">
+    <div class="logo"></div>
     <h1 class='biomap'>BioMap</h1>
   </div>
   <div class="moto">
-    <h2>Find local organic farmers nearby.</h2>
+    <h2>Trouve les producteurs locaux & bio prêt de chez toi.</h2>
   </div>
 
-  <div class="form-container">
-    <%= simple_form_for :search,  url: pages_path , method: :get do |f| %>
-      <%= f.input :address %>
-      <%= f.submit "search" %>
-    <% end %>
-  </div>
-
-<%# searchbar stylisée mais infonctionnelle: %>
-  <%# <div class="searchbar">
-    <form action="/pages" >
-      <input type="search" required :address>
-      <i class="fa fa-search"></i>
+  <div class="searchbar">
+    <form action="/pages" method="get">
+      <input type="text" name="search[address]" required :address>
+      <i class="fa fa-search"><input type="submit" class="submit"></i>
     </form>
-  </div> %>
-</div>
-
-
-<div class="content">
-  <div class="card">
-    <div class="icon"><i class="fa fa-leaf"></i></div>
-    <p class="title">Bio products</p>
-    <p class="text">Bio crops certified by Ministry of Agriculture.</p>
   </div>
-  <div class="card">
-    <div class="icon"><i class="fa fa-tractor"></i></div>
-      <p class="title">Local farmers</p>
-      <p class="text">Consume local products wherever you are.</p>
+
+  <%# <div class="form-container">
+    <%= simple_form_for :search,  url: pages_path , method: :get do |f| %>
+      <%# <%= f.input :address %>
+      <%# <%= f.submit "search" %>
+    <%# <% end %>
+  <%# </div> %>
+
+  <div class="content">
+    <div class="card">
+      <div class="icon"><i class="fa fa-leaf"></i></div>
+      <p class="title">Produits Bio</p>
+      <p class="text">Cultures Bio certifiées par le Ministère de l'Agriculture.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon"><i class="fa fa-tractor"></i></div>
+        <p class="title">Producteurs locaux</p>
+        <p class="text">Consomme local, où que tu sois.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+        <p class="title">Itinéraire optimisé</p>
+        <p class="text">Rend toi chez les producteurs alentours en un rien de temps.</p>
     </div>
   </div>
 </div>
