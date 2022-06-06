@@ -7,20 +7,19 @@
     <h2>Trouve les producteurs locaux & bio prêt de chez toi.</h2>
   </div>
 
-  <div class="form-container">
-    <%= simple_form_for :search,  url: pages_path , method: :get do |f| %>
-      <%= f.input :address %>
-      <%= f.submit "search" %>
-    <% end %>
+  <div class="searchbar">
+    <form action="/pages" method="get">
+      <input type="text" name="search[address]" required :address>
+      <i class="fa fa-search"><input type="submit" class="submit"></i>
+    </form>
   </div>
 
-<%# searchbar stylisée mais infonctionnelle: %>
-  <%# <div class="searchbar">
-    <form action="/pages" >
-      <input type="search" required :address>
-      <i class="fa fa-search"></i>
-    </form>
-  </div> %>
+  <%# <div class="form-container">
+    <%= simple_form_for :search,  url: pages_path , method: :get do |f| %>
+      <%# <%= f.input :address %>
+      <%# <%= f.submit "search" %>
+    <%# <% end %>
+  <%# </div> %>
 </div>
 
 
