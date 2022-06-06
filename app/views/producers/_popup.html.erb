@@ -1,22 +1,63 @@
 <div>
-  <h3><%= producer['denominationcourante'] %></h3>
-  <p><strong>Categories:</strong></p>
-    <ul class="popup-infos" style="list-style: none;">
-    <% categories = producer['productions'].map {|production| production['category']}.uniq %>
-    <% categories.each do |category|%>
-      <li>
-      <%= category %>
-      </li>
+  <div class="popup-banner">
+    <h3><%= producer['denominationcourante'] %></h3>
+  </div>
+  <div class="producer-infos">
+    <% if producer["adressesOperateurs"][0]["lieu"].present? %>
+      <%# Geocoder.search([producer["adressesOperateurs"][0]["lat"], producer["adressesOperateurs"][0]["long"]]).first.address %>
+      <p>
+        <i class="fas fa-map-marker-alt"></i>
+        <%= producer["adressesOperateurs"][0]["lieu"]%>,
+        <%= producer["adressesOperateurs"][0]["codePostal"] %>
+        <%= producer["adressesOperateurs"][0]["ville"] %>
+      </p>
     <% end %>
-  </ul>
+    <% if producer['telephone'].present? %>
+      <p><i class="fas fa-phone"></i> <%= producer['telephone'] %>
+        <% if producer['telephoneCommerciale'].present? %>
+          / <%= producer['telephoneCommerciale'] %>
+        <% end %>
+      </p>
+    <% end %>
+    <% if producer['email'].present? %>
+      <p>
+        <i class="fas fa-envelope"> </i>
+        <%= producer['email'] %>
+      </p>
+    <% end %>
+    <% if producer['sitesWeb'].present? %>
+      <p>
+        <i class="fas fa-globe"> </i>
+        <%= producer['sitesWeb']['url'] %>
+        (<%= producer['sitesWeb']['typeSiteWeb'] %>)
+      </p>
+    <% end %>
+  </div>
 
-  <p><strong>Productions:</strong></p>
-  <ul style="list-style: none;">
-    <% producer["productions"].each do |production| %>
-      <li>
-        <%= production["nom"] %>
-      </li>
-    <% end %>
-  </ul>
-  <a href="<%= producer['nav_link'] %>" target="_blank">Navigation</a>
+  <div class="product-infos">
+    <div class="category">
+      <p><strong>Categories:</strong></p>
+      <ul style="list-style: none">
+        <% categories = producer['productions'].map {|production| production['category']}.uniq %>
+        <% categories.each do |category|%>
+          <li>
+            <%= category %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="productions">
+      <p><strong>Productions:</strong></p>
+      <ul style="list-style: none">
+        <% producer["productions"].take(5).each do |production| %>
+          <li>
+            <%= production["nom"] %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="popup-footer">
+    <a class="navigation" href="<%= producer["nav_link"] %>" target="_blank">Itinéraire</a>
+  </div>
 </div>
