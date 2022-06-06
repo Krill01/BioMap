@@ -12,10 +12,7 @@
   </div>
 
   <div class="form-container">
-    <%= simple_form_for :search,  url: pages_path , method: :get do |f| %>
-      <%= f.input :address %>
-      <%= f.submit "search" %>
-    <% end %>
+    <%= render "shared/search_bar" %>
   </div>
 
 <%# searchbar stylisée mais infonctionnelle: %>
