@@ -12,10 +12,6 @@ export default class extends Controller {
     // mettre categories ici
   }
 
-  updateByCategories(xxx) {
-    // todo
-  }
-
   filter(e) {
     const filterCategories = e.detail
     this.dataMarkers.forEach (dataMarker => {
@@ -65,11 +61,6 @@ export default class extends Controller {
         }
       this.map.setCenter([this.center.lng, this.center.lat])
       this.map.setZoom(11)
-      // POURQUOI CA MARCHE PAS ????
-      // this.marker.remove()
-      // docMapBox =>
-      // const popup = new mapboxgl.Popup().addTo(map);
-      // popup.remove();
 
       this.addLocationToMap()
       this.searchProducer()
