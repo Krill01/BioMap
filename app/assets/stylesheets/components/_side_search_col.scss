@@ -1,13 +1,16 @@
 .filter-column {
-  padding: 1rem 1rem;
+  padding: 3rem 1rem;
   background-color: $awesome-black;
   width:30%;
   h3 {
     color: white;
+    box-shadow: inset 0 -0.4em 0 #73dc8c;
+    width: fit-content;
   }
 }
 
 .cat-items {
+  margin-top: 31px;
   display: inline-block;
   text-align: center;
 }
