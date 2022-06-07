@@ -41,7 +41,7 @@
         <% categories = producer['productions'].map {|production| production['category']}.uniq %>
         <% categories.each do |category|%>
           <li>
-            <%= category %>
+            <%= CategoryMapper::MAPPING[category]['name'] %>
           </li>
         <% end %>
       </ul>

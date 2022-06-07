@@ -30,7 +30,7 @@ export default class extends Controller {
   }
 
   connect() {
-    window.aaa = this
+    window.bbb = this
     this.markers = []
     mapboxgl.accessToken = this.apiKeyValue
     this.center = this.locationValue
