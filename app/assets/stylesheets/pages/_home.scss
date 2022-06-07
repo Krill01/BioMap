@@ -1,21 +1,12 @@
 // Specific CSS for your home-page
 body{
-  background-color: $awesome-black;
+  background-color: $background-color;
   background-size: cover;
 }
 
 .banner{
   height: 50vh;
   padding-top: 1vh;
-}
-
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 50px;
-  font-weight: bold;
-  font-family: McLaren;
 }
 
 .moto {
@@ -26,14 +17,12 @@ body{
 
 .moto h2{
   font-family: Poiret One;
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 25px;
+  color: $font-color;
+  font-weight:bolder;
 }
 
 .form-container{
   display:flex;
   justify-content: center;
-
 }

@@ -1,11 +1,11 @@
 <div class="banner">
-  <div class="logo-container">
-    <div class="logo"></div>
-    <h1 class='biomap'>BioMap</h1>
+  <div class="logo text-center">
+    <%= image_tag('logo.svg')%>
   </div>
   <div class="moto">
     <h2>Trouve les producteurs locaux & bio prêt de chez toi.</h2>
   </div>
+
   <div class="searchbar">
     <form action="/pages" method="get">
       <input type="text" name="search[address]" required :address>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="card">
-      <div class="icon"><i class="fa fa-tractor"></i></div>
+      <div class="icon" id="card2"><i class="fa fa-tractor"></i></div>
         <p class="title">Producteurs locaux</p>
         <p class="text">Consomme local, où que tu sois.</p>
     </div>
@@ -33,3 +33,5 @@
     </div>
   </div>
 </div>
+
+<div class="footer"></div>

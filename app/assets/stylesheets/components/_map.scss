@@ -3,10 +3,10 @@
   border-radius: 8px;
 }
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
-  border-bottom-color: $awesome-black;
+  border-bottom-color: $background-color;
 }
 .mapboxgl-popup-content {
-  background-color: $awesome-black;
+  background-color: $background-color;
   color: white;
 }
 
@@ -49,13 +49,13 @@
     border-radius: 8px;
     font-family: $body-font;
     background-color: $awesome-green;
-    color: $awesome-black;
+    color: $background-color;
     width: 35%;
     white-space: nowrap;
     overflow: hidden;
     p {
         margin-bottom: 8px;
-        border-bottom: 1px solid $awesome-black;
+        border-bottom: 1px solid $background-color;
     }
     ul {
       padding-left: 0;
