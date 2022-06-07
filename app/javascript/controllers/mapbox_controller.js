@@ -30,7 +30,7 @@ export default class extends Controller {
   }
 
   connect() {
-    window.aaa = this
+    window.bbb = this
     this.markers = []
     mapboxgl.accessToken = this.apiKeyValue
     this.center = this.locationValue
@@ -91,11 +91,11 @@ export default class extends Controller {
       const popup = new mapboxgl.Popup()
                         .setHTML(producer.popup_html)
 
-      this.marker = new mapboxgl.Marker({ "color": "#4b78e6" })
+      const marker = new mapboxgl.Marker({ "color": "#4b78e6" })
         .setLngLat([producer["adressesOperateurs"][0]["long"], producer["adressesOperateurs"][0]["lat"]])
         .setPopup(popup)
         .addTo(this.map)
-        this.markers.push(this.marker)
+        this.markers.push(marker)
         const dataMarker = {producer: producer, marker: marker}
         this.dataMarkers.push(dataMarker)
     });

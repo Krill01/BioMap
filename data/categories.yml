@@ -66,7 +66,6 @@ oeufs:
 viandes:
   name: Viandes
   codes:
-    - "01.49.2"
     - "01.49.3"
     - "10.11.1"
     - "10.11.2"
@@ -127,3 +126,8 @@ plats_prepares:
     - "10.85"
     - "10.86"
     - "10.89"
+apiculture:
+  name: Apiculture
+  codes:
+    - "01.49.2"
+    - "01.49.1"

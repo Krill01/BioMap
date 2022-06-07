@@ -8,7 +8,6 @@ class PagesController < ApplicationController
   end
 
   def index
-    @categories_id = CategoryMapper::MAPPING.map { |category_id, _category| category_id }
     address = params[:search][:address]
     address_to_geo = Geocoder.search(address)
     coordinates = address_to_geo.first.coordinates #ARRAY
