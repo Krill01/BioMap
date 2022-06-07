@@ -42,33 +42,16 @@ export default class extends Controller {
       center: this.center,
       style: "mapbox://styles/mapbox/streets-v10"
     })
-
     this.geocoder = new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
       placeholder: 'Nouvelle adresse de recherche :',
       mapboxgl: mapboxgl,
       marker: false
     })
-
     this.map.addControl(this.geocoder)
-
     this.addLocationToMap()
     this.searchProducer()
-
-    this.geocoder.on('result', (e) => {
-      this.center = {
-        lat: e.result.geometry["coordinates"][1],
-        lng: e.result.geometry["coordinates"][0]
-        }
-      this.map.setCenter([this.center.lng, this.center.lat])
-      this.map.setZoom(11)
-
-      this.location.remove()
-      this.markers.forEach((marker) => {marker.remove()})
-
-      this.addLocationToMap()
-      this.searchProducer()
-    })
+    this.updateMapOnGeocoder()
   }
 
   addLocationToMap() {
@@ -86,26 +69,53 @@ export default class extends Controller {
     })
   }
 
-  addProducersToMap(data) {
-    data.forEach((producer) => {
-      const popup = new mapboxgl.Popup()
-                        .setHTML(producer.popup_html)
+  hidePopups() {
+    this.markers.forEach((m) => {
+      const isOpen = m.getPopup().isOpen()
+      if (isOpen) { m.togglePopup() }
+    })
+  }
 
-      const marker = new mapboxgl.Marker({ "color": "#4b78e6" })
-        .setLngLat([producer["adressesOperateurs"][0]["long"], producer["adressesOperateurs"][0]["lat"]])
-        .setPopup(popup)
-        .addTo(this.map)
-        this.markers.push(marker)
-        const dataMarker = {producer: producer, marker: marker}
-        this.dataMarkers.push(dataMarker)
-    });
+  addEventMouseEnter(marker) {
+    marker.getElement().addEventListener("mouseenter", (e) => {
+      this.hidePopups()
+      marker.togglePopup()
+    })
+  }
+
+  addProducerToMap(producer) {
+    const popup = new mapboxgl.Popup()
+      .setHTML(producer.popup_html)
+
+    const marker = new mapboxgl.Marker({ "color": "#4b78e6" })
+      .setLngLat([producer["adressesOperateurs"][0]["long"], producer["adressesOperateurs"][0]["lat"]])
+      .setPopup(popup)
+      .addTo(this.map)
+
+    this.addEventMouseEnter(marker)
+    this.markers.push(marker)
+    const dataMarker = { producer: producer, marker: marker }
+    this.dataMarkers.push(dataMarker)
+  }
+
+  addProducersToMap(data) {
+    data.forEach(this.addProducerToMap.bind(this));
+  }
+
+  updateMapOnGeocoder(){
+    this.geocoder.on('result', (e) => {
+      this.center = {
+        lat: e.result.geometry["coordinates"][1],
+        lng: e.result.geometry["coordinates"][0]
+      }
+      this.map.setCenter([this.center.lng, this.center.lat])
+      this.map.setZoom(11)
+
+      this.location.remove()
+      this.markers.forEach((marker) => { marker.remove() })
+
+      this.addLocationToMap()
+      this.searchProducer()
+    })
   }
 }
-// const favorite = () => {
-//   console.log('je veux mettre e favoris ce truc', productor)
-// }
-
-// popup.on('open', () => {
-//   const buttonFavorite = popup.getElement().querySelector('button')
-//   buttonFavorite.addEventListener('click', favorite)
-// });
