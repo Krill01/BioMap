@@ -31,6 +31,7 @@ export default class extends Controller {
 
   connect() {
     window.aaa = this
+    this.markers = []
     mapboxgl.accessToken = this.apiKeyValue
     this.center = this.locationValue
     this.marker = null
@@ -61,11 +62,9 @@ export default class extends Controller {
         }
       this.map.setCenter([this.center.lng, this.center.lat])
       this.map.setZoom(11)
-      // POURQUOI CA MARCHE PAS ????
-      // this.marker.remove()
-      // docMapBox =>
-      // const popup = new mapboxgl.Popup().addTo(map);
-      // popup.remove();
+
+      this.location.remove()
+      this.markers.forEach((marker) => {marker.remove()})
 
       this.addLocationToMap()
       this.searchProducer()
@@ -73,7 +72,7 @@ export default class extends Controller {
   }
 
   addLocationToMap() {
-    new mapboxgl.Marker({ "color": "#FD1015" })
+    this.location = new mapboxgl.Marker({ "color": "#73DC8C" })
       .setLngLat([this.center.lng, this.center.lat])
       .addTo(this.map)
   }
@@ -89,30 +88,24 @@ export default class extends Controller {
 
   addProducersToMap(data) {
     data.forEach((producer) => {
-      // console.log(producer)
-
-      // console.log(producer.productions.map (p => p.category))
-
       const popup = new mapboxgl.Popup()
-      // need to put filter targets in html in order to filter the markers
                         .setHTML(producer.popup_html)
-      // Create a HTML element for your custom marker
-      const marker = new mapboxgl.Marker()
+
+      this.marker = new mapboxgl.Marker({ "color": "#4b78e6" })
         .setLngLat([producer["adressesOperateurs"][0]["long"], producer["adressesOperateurs"][0]["lat"]])
         .setPopup(popup)
         .addTo(this.map)
-
-      const dataMarker = {producer: producer, marker: marker}
-      this.dataMarkers.push(dataMarker)
-
-      // const favorite = () => {
-      //   console.log('je veux mettre e favoris ce truc', productor)
-      // }
-
-      // popup.on('open', () => {
-      //   const buttonFavorite = popup.getElement().querySelector('button')
-      //   buttonFavorite.addEventListener('click', favorite)
-      // });
+        this.markers.push(this.marker)
+        const dataMarker = {producer: producer, marker: marker}
+        this.dataMarkers.push(dataMarker)
     });
   }
 }
+// const favorite = () => {
+//   console.log('je veux mettre e favoris ce truc', productor)
+// }
+
+// popup.on('open', () => {
+//   const buttonFavorite = popup.getElement().querySelector('button')
+//   buttonFavorite.addEventListener('click', favorite)
+// });

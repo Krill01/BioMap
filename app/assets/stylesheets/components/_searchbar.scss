@@ -111,7 +111,7 @@ form:valid .fa{
   top: 0;
   left: 0;
   width: 100%;;
-  height: 42.5px;
+  // height: 42.5px;
   line-height: 30px;
   outline: 0;
   border: 0;
@@ -144,15 +144,20 @@ form:valid .fa{
   top: 0;
   right: 0;
   border-radius: 50%;
-  color: #07051a;
+  color: #73DC8C;
   text-align: center;
   font-size: 1.2em;
   transition: all 1s;
 }
 
+.searchbar .submit {
+  opacity:0;
+  position: absolute;
+}
+
 .searchbar form:hover,
 .searchbar form:valid{
-  width: 200px;
+  width: 295px;
   cursor: pointer;
 }
 
@@ -168,6 +173,6 @@ form:valid select{
 
 .searchbar form:hover .fa,
 form:valid .fa{
-  background: #07051a;
+  background: #73DC8C;
   color: white;
 }
