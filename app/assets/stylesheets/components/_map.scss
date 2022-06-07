@@ -5,6 +5,9 @@
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
   border-bottom-color: $awesome-black;
 }
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: $awesome-black;
+}
 .mapboxgl-popup-content {
   background-color: $awesome-black;
   color: white;
