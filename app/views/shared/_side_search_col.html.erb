@@ -1,8 +1,11 @@
 <div class="filter-column">
-  <h3>Catégories:</h3>
-  <div class="cat-items">
-    <% @categories.each do |category|  %>
-        <%= check_box_tag "#{category.split(' ').join('-')}", "#{category}", true, class:"check"%><label for=<%="#{category.split(' ').join('-')}"%>><%= category %></label>
+  <h3>Catégories</h3>
+  <div class="cat-items" >
+    <% CategoryMapper::MAPPING.each do |category_id, category|  %>
+      <%= check_box_tag category_id, category_id, false, class:"check", data: { "action" => "click->filter#update", 'filter-target' => 'category' } %><label for=<%= category_id %>><%= category['name'] %></label>
     <% end %>
   </div>
 </div>
+
+<%# data: { "filter-value" => category_id }, %>
+<%# data: { "filter-target" => category_id }, %>

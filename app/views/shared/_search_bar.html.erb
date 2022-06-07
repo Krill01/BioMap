@@ -1,4 +1,4 @@
-<%= simple_form_for :search,  url: pages_path , method: :get do |f| %>
+<%= simple_form_for :search, class:"searchbar", url: pages_path , method: :get do |f| %>
   <%= f.input :address %>
-  <%= f.submit "search" %>
+  <%= f.submit "search", class:"fa fa-search" %>
 <% end %>

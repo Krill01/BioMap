@@ -7,19 +7,9 @@
     <h2>Trouve les producteurs locaux & bio prêt de chez toi.</h2>
   </div>
 
-  <div class="searchbar">
-    <form action="/pages" method="get">
-      <input type="text" name="search[address]" required :address>
-      <i class="fa fa-search"><input type="submit" class="submit"></i>
-    </form>
+  <div class="form-container">
+    <%= render "shared/search_bar" %>
   </div>
-
-  <%# <div class="form-container">
-    <%= simple_form_for :search,  url: pages_path , method: :get do |f| %>
-      <%# <%= f.input :address %>
-      <%# <%= f.submit "search" %>
-    <%# <% end %>
-  <%# </div> %>
 
   <div class="content">
     <div class="card">
