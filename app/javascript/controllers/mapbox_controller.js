@@ -61,6 +61,11 @@ export default class extends Controller {
         }
       this.map.setCenter([this.center.lng, this.center.lat])
       this.map.setZoom(11)
+      // POURQUOI CA MARCHE PAS ????
+      // this.marker.remove()
+      // docMapBox =>
+      // const popup = new mapboxgl.Popup().addTo(map);
+      // popup.remove();
 
       this.addLocationToMap()
       this.searchProducer()
