@@ -6,9 +6,11 @@
   <div class="moto">
     <h2>Trouve les producteurs locaux & bio prêt de chez toi.</h2>
   </div>
-
-  <div class="form-container">
-    <%= render "shared/search_bar" %>
+  <div class="searchbar">
+    <form action="/pages" method="get">
+      <input type="text" name="search[address]" required :address>
+      <i class="fa fa-search"><input type="submit" class="submit"></i>
+    </form>
   </div>
 
   <div class="content">
