@@ -1,5 +1,6 @@
 <div class="filter-column">
   <h3>Catégories</h3>
+  <button class="btn btn-primary" data-action="click->mapbox#localizeMe">LOCALIZE-ME !!!!!</button>
   <div class="cat-items" >
     <% CategoryMapper::MAPPING.each do |category_id, category|  %>
       <%= check_box_tag category_id, category_id, false, class:"check", data: { "action" => "click->filter#update", 'filter-target' => 'category' } %><label for=<%= category_id %>><%= category['name'] %></label>
