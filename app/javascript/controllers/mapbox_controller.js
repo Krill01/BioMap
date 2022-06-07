@@ -11,7 +11,14 @@ export default class extends Controller {
     categoriesId: Array,
     // mettre categories ici
   }
-// ===================================================================================================
+
+  sendCoordinates() {
+    const event = new CustomEvent('coordinatesChanged', {
+      detail: this.center
+    })
+    this.element.dispatchEvent(event);
+  }
+
   filter(e) {
     const filterCategories = e.detail
     this.dataMarkers.forEach (dataMarker => {
@@ -34,6 +41,7 @@ export default class extends Controller {
     this.markers = []
     mapboxgl.accessToken = this.apiKeyValue
     this.center = this.locationValue
+    this.sendCoordinates()
     this.marker = null
     this.dataMarkers = []
     this.map = new mapboxgl.Map({
@@ -51,6 +59,7 @@ export default class extends Controller {
     this.map.addControl(this.geocoder)
     this.addLocationToMap()
     this.searchProducer()
+
     this.updateMapOnGeocoder()
   }
 // ===================================================================================================
@@ -120,7 +129,7 @@ export default class extends Controller {
     }
     this.map.setCenter([this.center.lng, this.center.lat])
     this.map.setZoom(11)
-
+    this.sendCoordinates()
     this.updateLocationMarker()
     this.removeAllMarkers()
     this.searchProducer()

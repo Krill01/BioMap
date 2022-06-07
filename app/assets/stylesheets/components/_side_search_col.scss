@@ -15,7 +15,6 @@ span{
 .cat-items {
   margin-top: 31px;
   display: inline-block;
-  text-align: center;
 }
 
 .check {
@@ -40,4 +39,25 @@ span{
 .check:checked + label {
   color: $awesome-black;
   background-color: $awesome-green;
+}
+
+.btn-nav {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.btn-nav:hover {
+  opacity: 1;
+}
+
+.btn-nav-hidden {
+  display: none;
+}
+
+ol {
+  color: white;
 }
