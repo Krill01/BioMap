@@ -1,12 +1,19 @@
 <div class="filter-column">
+  <%= image_tag('logo.svg')%>
   <h3>Catégories</h3>
   <div class="cat-items" >
     <% CategoryMapper::MAPPING.each do |category_id, category|  %>
       <%= check_box_tag category_id, category_id, false, class:"check", data: { "action" => "click->filter#update", 'filter-target' => 'category' } %><label for=<%= category_id %>><%= category['name'] %></label>
     <% end %>
   </div>
-  <div>
-    <h3>Navigation list</h3>
+
+    <button class="btn" data-action="click->mapbox#localizeMe"> <i class="fas fa-crosshairs"></i>  Localise moi</button>
+
+  <div class="itinary-card">
+    <div class="itinary-title">
+      <h3>Itinéraire</h3>
+      <i class="fas fa-location-arrow"></i>
+    </div>
     <ol data-nav-target='navlist'>
     </ol>
     <a class="btn-nav-hidden" href="#" data-nav-target="navlink" target="_blank">Navigate to</a>
