@@ -22,8 +22,6 @@
   font-size: 16px;
   transition: all 0.3s ease;
   position: relative;
-  display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   cursor: pointer;
@@ -91,7 +89,7 @@ i {
   text-align: center;
   margin-top: 20px;
   color: #3E4E50;
-  font-weight: lighter;
+  font-weight: normal;
   letter-spacing: 2px;
   opacity: 1;
   max-height:40px;

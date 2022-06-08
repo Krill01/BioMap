@@ -31,6 +31,7 @@
 .mapboxgl-popup-content {
   width: 350px;
   border-radius: 8px;
+  border: 1px solid rgba(56, 62, 63, 0.28);
   box-shadow: 0px 0px 20px rgba(129, 87, 54, 0.2);
   background-color: $background-card;
   color: $font-color;
@@ -60,6 +61,13 @@
   border-bottom: 1px solid $font-color;
 }
 
+.popup-banner {
+  h3 {
+    font-family: $body-font;
+    font-weight: 400;
+  }
+}
+
 .producer-infos {
   font-family: $body-font;
   color: $font-color;
@@ -70,6 +78,12 @@
   }
   i{
     font-size: 16px;
+  }
+  .fas {
+    margin-right: 5px;
+  }
+  .fa-plus-circle {
+    margin-right: 0px;
   }
   .address {
     display: flex;
