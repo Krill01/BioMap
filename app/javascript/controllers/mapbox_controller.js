@@ -64,7 +64,7 @@ export default class extends Controller {
   }
 // ===================================================================================================
   addLocationToMap() {
-    this.location = new mapboxgl.Marker({ "color": "#73DC8C" })
+    this.location = new mapboxgl.Marker({ "color": "#FF6230" })
       .setLngLat([this.center.lng, this.center.lat])
       .addTo(this.map)
   }
@@ -96,7 +96,7 @@ export default class extends Controller {
     const popup = new mapboxgl.Popup()
       .setHTML(producer.popup_html)
 
-    const marker = new mapboxgl.Marker({ "color": "#4b78e6" })
+    const marker = new mapboxgl.Marker({ "color": "rgba(60, 106, 38, 1)" })
       .setLngLat([producer["adressesOperateurs"][0]["long"], producer["adressesOperateurs"][0]["lat"]])
       .setPopup(popup)
       .addTo(this.map)

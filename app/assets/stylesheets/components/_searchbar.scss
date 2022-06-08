@@ -1,5 +1,5 @@
 .searchbar {
-  margin-top: 4em;
+  padding-top: 9em;
 }
 
 .searchbar form{
@@ -9,7 +9,7 @@
   transform: translate(-50%,-50%);
   transition: all 0.5s;
   // width: 50px;
-  height: 50px;
+  height: 38px;
   background: white;
   box-sizing: border-box;
   border-radius: 25px;
@@ -17,7 +17,7 @@
   padding: 5px;
   display: flex;
   box-shadow: 0px 0px 20px rgba(129, 87, 54, 0.2);
-  width: 295px;
+  width: 400px;
 }
 
 .searchbar input{
@@ -29,7 +29,7 @@
   line-height: 30px;
   outline: 0;
   border: 0;
-  display: none;
+  display: block;
   font-size: 1em;
   border-radius: 20px;
   padding: 0 20px;
@@ -51,14 +51,13 @@
 }
 .searchbar .fa{
   box-sizing: border-box;
-  padding: 10px;
-  width: 42.5px;
-  height: 42.5px;
+  padding: 9px;
+  width: 38.5px;
+  height: 38.5px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -4px;
+  right: -4px;
   border-radius: 50%;
-  // color: rgba(255, 98, 48, 0.84);
   text-align: center;
   font-size: 1.2em;
   transition: all 1s;
@@ -66,28 +65,29 @@
   color: rgba(255, 255, 255, 0.84);
 }
 
+
 .searchbar .submit {
   opacity:0;
   position: absolute;
 }
 
-.searchbar form:hover,
+// .searchbar form:hover,
 .searchbar form:valid{
-  width: 295px;
+  width: 400px;
   cursor: pointer;
 }
 
-form:hover input,
+// form:hover input,
 form:valid input{
   display: block;
 }
 
-form:hover select,
+// form:hover select,
 form:valid select{
   display: block;
 }
 
-.searchbar form:hover .fa,
+// .searchbar form:hover .fa,
 form:valid .fa{
   background: rgba(255, 98, 48, 0.84);
   color: rgba(255, 255, 255, 0.84);
