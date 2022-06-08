@@ -1,19 +1,24 @@
 .filter-column {
-  padding: 3rem 1rem;
+  padding: 1rem 1rem;
   background-color: $background-color;
   width:30%;
-  h3 {
-    color: white;
-    box-shadow: inset 0 -0.4em 0 #73dc8c;
-    width: fit-content;
+
+  img{
+    width: 70%;
   }
-}
-span{
-  background-color: #73dc8c;
+
+  h3 {
+    padding-top: 1.5rem;
+    color: $card-orange;
+    box-shadow: inset 0 -0.4em 0 #FDF6F1;
+    width: fit-content;
+    font-family: $body-font;
+    font-weight: 600;
+  }
 }
 
 .cat-items {
-  margin-top: 31px;
+  margin-top: 18px;
   display: inline-block;
 }
 
@@ -24,34 +29,74 @@ span{
 
 .check + label {
   cursor: pointer;
-  color: $awesome-green;
-  // width: 100%;
-  background-color: none;
-  border: 1px $awesome-green solid;
   margin-right: 0.2rem;
   margin-bottom: 0.4rem;
   padding: 0.2rem 0.6rem;
+  // font-size: 1rem;
+
+  background-color: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(255, 98, 48, 0.96);
+  border-radius: 31px;
+
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  // display: flex;
+  // align-items: center;
   text-align: center;
-  border-radius: 50rem;
-  font-size: 1rem;
+  letter-spacing: 0.07em;
+  color: rgba(255, 98, 48, 0.96);
+
+  justify-content: center;
 }
 
 .check:checked + label {
-  color: $background-color;
-  background-color: $awesome-green;
+  color: rgba(255, 255, 255, 0.66);
+  background-color: rgba(255, 98, 48, 0.96);
 }
 
-.btn-nav {
-  color: white;
-  border: 1px solid white;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+.btn{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.21em;
+  color: #3E4E50;
 }
-.btn-nav:hover {
-  opacity: 1;
+
+.fa-crosshairs{
+  color: rgba(129, 87, 54, 0.2);
+}
+
+.itinary-card{
+  background: #FDF6F1;
+  box-shadow: 0px 4px 4px rgba(129, 87, 54, 0.2);
+  border-radius: 7px;
+
+  .itinary-title{
+    display:flex;
+    justify-content: center;
+  }
+
+  h3{
+    box-shadow: inset 0 -0.4em 0 #b6d2a8;
+    color: #3C6A26;
+
+    left: 3rem;
+    // position: relative;
+  }
+
+  i{
+    padding-top: 1.5rem;
+    margin-bottom: 8px;
+    padding-left: 0.5rem;
+  }
 }
 
 .btn-nav-hidden {
