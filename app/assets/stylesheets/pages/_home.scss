@@ -5,14 +5,16 @@ body{
 }
 
 .home-container{
+  max-width: 1024px;
   height: 100vh;
   padding-top: 3vh;
   padding-bottom: 3vh;
+  margin: 0 auto;
 }
 
 .banner {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .logo-and-slogan{
@@ -22,8 +24,8 @@ body{
 }
 
 img{
-  width: 341px;
-  height: 197px;
+  width: 450px;
+  height: 250px;
 }
 
 .moto h2{
@@ -31,20 +33,13 @@ img{
   // font-size: 25px;
   // color: $font-color;
   // font-weight:bolder;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #3E4E50;
-
-}
-
-.form-container{
-  display:flex;
-  justify-content: center;
+  font-family: $body-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  align-items: center;
+  text-align: center;
+  color: #3E4E50;
+  margin-top: 40px;
 }
