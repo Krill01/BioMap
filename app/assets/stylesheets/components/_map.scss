@@ -1,9 +1,39 @@
+
+.localize-me-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px rgba(129, 87, 54, 0.2);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  right: 325px;
+  .localize-me{
+    color: #979797;
+    font-size: 18px;
+    z-index: 2;
+  }
+  .localize-me:hover{
+    color: #757575;
+  }
+}
+
+
+.map{
+  z-index: 0;
+}
+
 .mapboxgl-popup-content {
   width: 350px;
   border-radius: 8px;
   box-shadow: 0px 0px 20px rgba(129, 87, 54, 0.2);
   background-color: $background-card;
-  color:$font-color;
+  color: $font-color;
 }
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
@@ -21,6 +51,7 @@
 .mapboxgl-ctrl-geocoder {
   justify-content: center;
   width: 300px;
+  height: 36px;
   border-radius: 16px;
 }
 
