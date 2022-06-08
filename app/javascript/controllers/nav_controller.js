@@ -36,8 +36,9 @@ export default class extends Controller {
   }
   addHref(producersCoordinates) {
     this.navlinkTarget.className = "btn-nav"
-    const href = `https://www.google.com/maps/dir/?api=1&waypoints=${producersCoordinates.join("|")}&dest=${this.coordinates}travelmode=driving`
+    const href = `https://www.google.com/maps/dir/?api=1&waypoints=${producersCoordinates.join("|")}&destination=${this.coordinates}&travelmode=driving`
     this.navlinkTarget.href = href
+    console.log(href)
   }
 
 }
