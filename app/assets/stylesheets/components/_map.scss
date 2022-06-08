@@ -1,23 +1,21 @@
 .mapboxgl-popup-content {
   width: 350px;
   border-radius: 8px;
+  box-shadow: 0px 0px 20px rgba(129, 87, 54, 0.2);
+  background-color: $background-card;
+  color:$font-color;
 }
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
-  border-bottom-color: $background-color;
+  border-bottom-color: $background-card;
 }
 
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
-  border-top-color: $background-color;
-}
-
-.mapboxgl-popup-content {
-  background-color: $background-color;
-  color: white;
+  border-top-color: $background-card;
 }
 
 .mapboxgl-ctrl-geocoder {
@@ -28,20 +26,36 @@
 
 .popup-banner {
   text-align: center;
-  border-bottom: 1px solid #ffffff;
-  // margin-bottom: 8px;
+  border-bottom: 1px solid $font-color;
 }
 
 .producer-infos {
   font-family: $body-font;
-  color: white;
+  color: $font-color;
   padding: 8px;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid $font-color;
   p{
     margin: 0;
   }
   i{
     font-size: 16px;
+  }
+  .address {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .address-add{
+      color: $green-card-icon;
+    }
+    .address-add:hover{
+      color: $card-green;
+      cursor: pointer;
+    }
   }
 }
 
@@ -50,22 +64,23 @@
   display: flex;
   justify-content: space-around;
   padding-bottom: 8px;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid $font-color;
   margin-bottom: 8px;
   .category{
     text-align: left;
     font-family: $body-font;
+    font-weight: bold;
     padding: 8px;
     border-radius: 8px;
     font-family: $body-font;
-    background-color: $awesome-green;
-    color: $background-color;
+    background-color: $card-orange;
+    color: $background-card;
     width: 35%;
     white-space: nowrap;
     overflow: hidden;
     p {
         margin-bottom: 8px;
-        border-bottom: 1px solid $background-color;
+        border-bottom: 1px solid $background-card;
     }
     ul {
       padding-left: 0;
@@ -79,18 +94,19 @@
   .productions{
     text-align: left;
     font-family: $body-font;
+    font-weight: bold;
     padding: 8px;
     margin-left: 8px;
     width: 65%;
     border-radius: 8px;
     font-family: $body-font;
-    color: $awesome-green;
-    border: 1px solid $awesome-green;
+    color: $card-orange;
+    border: 1px solid $card-orange;
     white-space: nowrap;
     overflow: hidden;
     p {
       margin-bottom: 8px;
-      border-bottom: 1px solid $awesome-green;
+      border-bottom: 1px solid $card-orange;
     }
     ul{
       overflow: hidden;
@@ -106,24 +122,45 @@
 }
 
 .popup-footer {
-  text-align: center;
+  display: flex;
   margin-top: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .navigation {
-  // margin-right: 50px;
+  justify-self: center;
   text-decoration: none;
   font-family: $body-font;
-  color: white;
+  color: $card-green;
   padding: 8px 48px;
   border-radius: 50px;
   font-weight: bold;
-  background-color: #4b78e6;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  border: 1px solid #4b78e6;
+  background-color: $green-card-icon;
+  // opacity: 1;
+  // transition: opacity 0.3s ease;
+  border: 1px solid $green-card-icon;
 }
 
 .navigation:hover {
-  opacity: 0.8;
+  // opacity: 0.8;
+  border: 1px solid $card-green;
+  background-color: $card-green;
+  color: $background-card;
 }
+
+// .navigation-add {
+//   align-items: flex-end;
+//   font-size: 24px;
+//   text-decoration: none;
+//   color: $card-green;
+//   opacity: 1;
+//   transition: opacity 0.3s ease;
+//   position: absolute;
+//   right: 20px;
+// }
+
+// .navigation-add:hover {
+//   opacity: 0.8;
+//   color: $green-card-icon;
+// }
