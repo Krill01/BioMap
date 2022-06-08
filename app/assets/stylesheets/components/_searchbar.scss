@@ -1,5 +1,5 @@
 .searchbar {
-  margin-top: 4em;
+  padding-top: 6em;
 }
 
 .searchbar form{
@@ -9,7 +9,7 @@
   transform: translate(-50%,-50%);
   transition: all 0.5s;
   // width: 50px;
-  height: 50px;
+  height: 38px;
   background: white;
   box-sizing: border-box;
   border-radius: 25px;
@@ -51,20 +51,20 @@
 }
 .searchbar .fa{
   box-sizing: border-box;
-  padding: 10px;
-  width: 42.5px;
-  height: 42.5px;
+  padding: 9px;
+  width: 38.5px;
+  height: 38.5px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -4px;
+  right: -4px;
   border-radius: 50%;
-  // color: rgba(255, 98, 48, 0.84);
   text-align: center;
   font-size: 1.2em;
   transition: all 1s;
   background: rgba(255, 98, 48, 0.84);
   color: rgba(255, 255, 255, 0.84);
 }
+
 
 .searchbar .submit {
   opacity:0;

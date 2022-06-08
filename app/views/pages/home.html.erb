@@ -1,16 +1,19 @@
-<div class="banner">
-  <div class="logo text-center">
-    <%= image_tag('logo.svg')%>
-  </div>
-  <div class="moto">
-    <h2>Trouve les producteurs locaux & bio prêt de chez toi.</h2>
-  </div>
-
-  <div class="searchbar">
-    <form action="/pages" method="get">
-      <input type="text" name="search[address]" required :address>
-      <i class="fa fa-search"><input type="submit" class="submit"></i>
-    </form>
+<div class="home-container">
+  <div class="banner">
+    <div class="logo-and-slogan">
+      <div class="logo text-center">
+        <%= image_tag('logo.svg')%>
+      </div>
+      <div class="moto">
+        <h2>Trouve les producteurs locaux & bio près de chez toi.</h2>
+      </div>
+    </div>
+    <div class="searchbar">
+      <form action="/pages" method="get">
+        <input type="text" name="search[address]" required :address>
+        <i class="fa fa-search"><input type="submit" class="submit"></i>
+      </form>
+    </div>
   </div>
 
   <div class="content">

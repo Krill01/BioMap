@@ -4,22 +4,44 @@ body{
   background-size: cover;
 }
 
-.banner{
-  height: 50vh;
-  padding-top: 1vh;
+.home-container{
+  height: 100vh;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
 }
 
-.moto {
+.banner {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+}
+
+.logo-and-slogan{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+img{
+  width: 341px;
+  height: 197px;
 }
 
 .moto h2{
-  font-family: Poiret One;
-  font-size: 25px;
-  color: $font-color;
-  font-weight:bolder;
+  // font-family: Poiret One;
+  // font-size: 25px;
+  // color: $font-color;
+  // font-weight:bolder;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #3E4E50;
+
 }
 
 .form-container{
