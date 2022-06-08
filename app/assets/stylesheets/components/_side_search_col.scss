@@ -1,6 +1,6 @@
 .filter-column {
   padding: 3rem 1rem;
-  background-color: $awesome-black;
+  background-color: $background-color;
   width:30%;
   h3 {
     color: white;
@@ -37,7 +37,7 @@ span{
 }
 
 .check:checked + label {
-  color: $awesome-black;
+  color: $background-color;
   background-color: $awesome-green;
 }
 
