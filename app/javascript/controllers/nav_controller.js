@@ -10,6 +10,7 @@ export default class extends Controller {
 
   coordinatesChanged(e) {
     this.coordinates[0] = `${e.detail.lat},${e.detail.lng}`
+    this.refreshHtml()
   }
 
   add(e){
@@ -29,16 +30,21 @@ export default class extends Controller {
       `<li>${producer.denominationcourante}</li>`
       )
     })
-    if (producersCoordinates.length == 0) {
-      return
-    }
+      if (producersCoordinates.length == 0) {
+        return
+      }
     this.addHref(producersCoordinates)
   }
   addHref(producersCoordinates) {
-    this.navlinkTarget.className = "btn-nav"
-    const href = `https://www.google.com/maps/dir/?api=1&waypoints=${producersCoordinates.join("|")}&destination=${this.coordinates}&travelmode=driving`
-    this.navlinkTarget.href = href
-    console.log(href)
+  this.navlinkTarget.className = "btn-nav"
+    if (producersCoordinates.length == 1){
+      const href = `https://www.google.com/maps/dir/?api=1&destination=${producersCoordinates[0]}&travelmode=driving`
+      this.navlinkTarget.href = href
+    } else {
+      const waypoints = producersCoordinates.slice(0, -1)
+      const href = `https://www.google.com/maps/dir/?api=1&waypoints=${waypoints.join('|')}&destination=${producersCoordinates[producersCoordinates.length - 1]}&travelmode=driving`
+      this.navlinkTarget.href = href
+      console.log(href)
+    }
   }
-
 }
