@@ -1,5 +1,6 @@
 <div>
-  <div class="popup-banner">
+  <div class="popup-banner"
+       data-nav-target='card'>
     <h3><%= producer['denominationcourante'] %></h3>
   </div>
   <div class="producer-infos">
@@ -60,4 +61,5 @@
   <div class="popup-footer">
     <a class="navigation" href="<%= producer["nav_link"] %>" target="_blank">Itinéraire</a>
   </div>
+  <span data-action="click->nav#add" data-producer="<%= producer.to_json %>">>ajouter a la navifation</span>
 </div>

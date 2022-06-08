@@ -107,7 +107,7 @@ boissons:
     - "11.05.1"
     - "11.07"
 epicerie_fine:
-  name: Épicerie fine
+  name: Epicerie fine
   codes:
     - "01.28"
     - "11.02.1"

@@ -7,12 +7,6 @@ class CategoryMapper
         codes.include?(code.first(7)) || codes.include?(code.first(5))
       end
       return id if match_category
-      # if match_category
-      #   {
-      #     id: id,
-      #     name: category["name"]
-      #   }
-      # end
     end
     return nil
     # return string category
