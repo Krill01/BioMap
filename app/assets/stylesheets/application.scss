@@ -9,9 +9,10 @@
 @import "font-awesome";
 @import "mapbox-gl/dist/mapbox-gl";
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=McLaren&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/home";
+@import "pages/map";
