@@ -35,6 +35,8 @@ export default class extends Controller {
 
     })
   }
+
+
 // ===================================================================================================
   connect() {
     window.bbb = this
@@ -146,4 +148,6 @@ export default class extends Controller {
       this.updateCenter(pos.coords.latitude, pos.coords.longitude)
     })
   }
+  // ===================================================================================================
+
 }

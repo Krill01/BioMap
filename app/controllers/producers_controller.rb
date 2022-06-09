@@ -6,7 +6,7 @@ class ProducersController < ApplicationController
     latitude = params[:lat]
     longitude = params[:lng]
 
-    @search_url = "https://opendata.agencebio.org/api/gouv/operateurs/?lat=#{latitude}&lng=#{longitude}&nb=50&filtrerVenteDetail=1"
+    @search_url = "https://opendata.agencebio.org/api/gouv/operateurs/?lat=#{latitude}&lng=#{longitude}&nb=100&filtrerVenteDetail=1"
     producers_json = URI(@search_url).read
     producers_data = JSON.parse(producers_json)['items']
 
