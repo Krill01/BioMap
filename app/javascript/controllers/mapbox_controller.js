@@ -34,6 +34,8 @@ export default class extends Controller {
       dataMarker.marker.getElement().hidden = !dataMarkerContainsOneFilterCategory
     })
   }
+
+
 // ===================================================================================================
   connect() {
     window.bbb = this
@@ -147,7 +149,7 @@ export default class extends Controller {
       this.updateCenter(pos.coords.latitude, pos.coords.longitude)
     })
   }
-
+  
   removeLoading() {
     this.loadingTarget.style.display = "none";
   }

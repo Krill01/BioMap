@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
   def index
     address = params[:search][:address]
+    Geocoder.configure(:timeout => 5)
     address_to_geo = Geocoder.search(address)
     coordinates = address_to_geo.first.coordinates #ARRAY
     @coordinates_hash = {
