@@ -1,7 +1,7 @@
 .filter-column {
   padding: 1rem 1rem;
   background-color: $background-color;
-  width:600px;
+  width: 500px;
   z-index: 1;
   border-right: 1px solid rgba(56, 62, 63, 0.28);
   box-shadow: 0px 0px 20px 1px rgba(129, 87, 54, 0.2);
@@ -53,7 +53,10 @@
 
   justify-content: center;
 }
-
+.check + label:hover {
+  opacity: 0.6;
+  background-color: rgba(255, 255, 255, 0.9);
+}
 .check:checked + label {
   color: rgba(255, 255, 255, 0.66);
   background-color: rgba(255, 98, 48, 0.96);
