@@ -1,4 +1,4 @@
 meta_product_name: "BioMap"
 meta_title: "BioMap - Trouve les producteurs locaux & bio"
 meta_description: "Trouve les producteurs locaux & bio"
-meta_image: "app/assets/logo.svg" # should exist in `app/assets/images/`
+meta_image: "BiomapLogo.png" # should exist in `app/assets/images/`
