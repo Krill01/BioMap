@@ -32,7 +32,6 @@ export default class extends Controller {
       // if at least one category matches in filter items, display
       const dataMarkerContainsOneFilterCategory = producerCat.some( category => filterCategories.includes(category))
       dataMarker.marker.getElement().hidden = !dataMarkerContainsOneFilterCategory
-
     })
   }
 // ===================================================================================================
