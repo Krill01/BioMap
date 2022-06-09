@@ -103,5 +103,10 @@
 }
 
 ol {
-  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: $font-color;
+  li{
+    padding-top:1rem;
+  }
 }
