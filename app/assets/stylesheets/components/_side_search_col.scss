@@ -81,7 +81,7 @@
     // position: relative;
   }
 
-  i{
+  .fa-location-arrow{
     padding-left: 4px;
     width: 24px;
     height: 24px;
@@ -96,10 +96,21 @@
     margin-top: 32px;
   }
 
-  i:hover {
+  .fa-location-arrow:hover {
     cursor: pointer;
     background-color: #3C6A26;
   }
+
+  .fa-minus-circle{
+    color: #b6d2a8;
+    margin-top: 2rem;
+    padding-right: 15px;
+  }
+}
+
+.fa-minus-circle:hover{
+  cursor: pointer;
+  color: #3C6A26;
 }
 
 .btn-nav-hidden {
