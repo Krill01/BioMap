@@ -45,4 +45,10 @@ export default class extends Controller {
       this.navlinkTarget.href = href
     }
   }
+
+  clearList(){
+    this.navlinkTarget.href = "#"
+    this.navlistTarget.innerHTML = ""
+  }
+
 }
