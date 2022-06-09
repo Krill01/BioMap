@@ -49,6 +49,7 @@ export default class extends Controller {
   clearList(){
     this.navlinkTarget.href = "#"
     this.navlistTarget.innerHTML = ""
+    this.producers = []
   }
 
 }
