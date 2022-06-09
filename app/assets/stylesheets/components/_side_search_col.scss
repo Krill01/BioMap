@@ -60,6 +60,9 @@
   color: white;
   background-color: rgba(255, 98, 48, 0.96);
 }
+.check:checked + label:hover {
+  opacity: 1;
+}
 
 .itinary-card{
   margin-top: 2rem;
