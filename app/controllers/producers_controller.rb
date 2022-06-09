@@ -16,6 +16,7 @@ class ProducersController < ApplicationController
         production['category'] = production_category
         production_category
       end
+      
       producer['nav_link'] = "https://www.google.com/maps/dir/?api=1&destination=#{producer["adressesOperateurs"][0]["lat"]},#{producer["adressesOperateurs"][0]["long"]}&travelmode=driving"
       producer['popup_html'] = render_to_string(partial: "popup", locals: { producer: producer })
     end

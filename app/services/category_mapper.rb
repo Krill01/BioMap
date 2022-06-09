@@ -3,8 +3,10 @@ class CategoryMapper
 
   def call(code) # code qui vient de l'api '01.13.01' ou '20.12'
     MAPPING.each do |id, category|
-      match_category = category["codes"].find do |codes|
-        codes.include?(code.first(7)) || codes.include?(code.first(5))
+      match_category = category["codes"].find do |c|
+        # ap c.size
+        # ap code.first(c.size)
+        code.first(c.size) == c
       end
       return id if match_category
     end

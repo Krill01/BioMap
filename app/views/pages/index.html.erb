@@ -7,6 +7,12 @@
   <%= render "shared/side_search_col" %>
 
   <div class="map" data-mapbox-target="mapElement">
+    <div class="loading" data-mapbox-target='loading'>
+      <div>
+        <p>chargement</p>
+        <p><span data-controller="loading-typed"></span></p>
+      </div>
+    </div>
     <div class="localize-me-container d-flex justify-content-center align-items-center">
       <i class="fas fa-crosshairs localize-me" data-action="click->mapbox#localizeMe"></i>
     </div>

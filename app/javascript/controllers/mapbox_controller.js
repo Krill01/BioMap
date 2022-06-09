@@ -3,7 +3,7 @@ import mapboxgl from "mapbox-gl"
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 
 export default class extends Controller {
-  static targets = ['mapElement']
+  static targets = ['mapElement', 'loading']
 
   static values = {
     apiKey: String,
@@ -32,7 +32,6 @@ export default class extends Controller {
       // if at least one category matches in filter items, display
       const dataMarkerContainsOneFilterCategory = producerCat.some( category => filterCategories.includes(category))
       dataMarker.marker.getElement().hidden = !dataMarkerContainsOneFilterCategory
-
     })
   }
 
@@ -72,10 +71,12 @@ export default class extends Controller {
   }
 // ===================================================================================================
   searchProducer() {
+    this.addLoading()
     const url = `/producers?lng=${this.center.lng}&lat=${this.center.lat}`
     fetch(url)
     .then(response => response.json())
     .then(data => {
+      this.removeLoading()
       this.addProducersToMap(data)
     })
   }
@@ -148,6 +149,12 @@ export default class extends Controller {
       this.updateCenter(pos.coords.latitude, pos.coords.longitude)
     })
   }
-  // ===================================================================================================
+  
+  removeLoading() {
+    this.loadingTarget.style.display = "none";
+  }
 
+  addLoading() {
+    this.loadingTarget.style.display = "flex";
+  }
 }

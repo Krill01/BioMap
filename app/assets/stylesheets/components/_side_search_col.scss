@@ -1,13 +1,13 @@
 .filter-column {
   padding: 1rem 1rem;
   background-color: $background-color;
-  width:600px;
+  width: 500px;
   z-index: 1;
   border-right: 1px solid rgba(56, 62, 63, 0.28);
   box-shadow: 0px 0px 20px 1px rgba(129, 87, 54, 0.2);
 
   img{
-    width: 70%;
+    width: 175px;
   }
 
   h3 {
@@ -17,6 +17,7 @@
     width: fit-content;
     font-family: $body-font;
     font-weight: 600;
+    font-size: 24px;
   }
 }
 
@@ -41,7 +42,7 @@
   border-radius: 31px;
 
   font-weight: 300;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 18px;
   // display: flex;
   // align-items: center;
@@ -51,7 +52,10 @@
 
   justify-content: center;
 }
-
+.check + label:hover {
+  opacity: 0.6;
+  background-color: rgba(255, 255, 255, 0.9);
+}
 .check:checked + label {
   color: rgba(255, 255, 255, 0.66);
   background-color: rgba(255, 98, 48, 0.96);
@@ -102,7 +106,12 @@
 }
 
 ol {
-  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: $font-color;
+  li{
+    padding-top:1rem;
+  }
 }
 
 .select-all {

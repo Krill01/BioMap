@@ -1,4 +1,21 @@
-
+.loading {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+  background: #ffffff41;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-family: $body-font;
+  font-size: 36px;
+  color: $main-orange-color;
+  i {
+    font-size: 24px;
+  }
+}
 .localize-me-container {
   display: flex;
   justify-content: center;
@@ -26,8 +43,6 @@
 
 .map{
   z-index: 0;
-  position: sticky;
-  top: 0;
   width:100%;
   height: 100vh;
 }
@@ -118,7 +133,7 @@
   .category{
     text-align: left;
     font-family: $body-font;
-    font-weight: bold;
+    font-weight: normal;
     padding: 8px;
     border-radius: 8px;
     font-family: $body-font;
@@ -143,7 +158,7 @@
   .productions{
     text-align: left;
     font-family: $body-font;
-    font-weight: bold;
+    font-weight: normal;
     padding: 8px;
     margin-left: 8px;
     width: 65%;
