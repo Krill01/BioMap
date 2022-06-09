@@ -1,6 +1,5 @@
 require "json"
 require "open-uri"
-# require "services/category_mapper.rb"
 
 class ProducersController < ApplicationController
   def index
