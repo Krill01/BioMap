@@ -11,11 +11,20 @@ class ProducersController < ApplicationController
     producers_data = JSON.parse(producers_json)['items']
 
     producers_data.each do |producer|
+
+
       producer['productions'].select! do |production|
         production_category = CategoryMapper.new.call(production['code'])
         production['category'] = production_category
+        if producer['id'] == 82619
+          ap "DEBUGGGGGG"
+          ap production
+        end
         production_category
       end
+
+
+
       producer['nav_link'] = "https://www.google.com/maps/dir/?api=1&destination=#{producer["adressesOperateurs"][0]["lat"]},#{producer["adressesOperateurs"][0]["long"]}&travelmode=driving"
       producer['popup_html'] = render_to_string(partial: "popup", locals: { producer: producer })
     end
