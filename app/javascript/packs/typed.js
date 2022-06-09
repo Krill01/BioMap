@@ -1,8 +1,9 @@
-import Typed from 'typed.js';
 
-var options = {
-  strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
-  typeSpeed: 40
-}
+// import Typed from 'typed.js'
 
-var typed = new Typed('.element', options)
+// var options = {
+//   strings: ['<i>First</i> sentence.', '&amp; a second sentence.']
+//   typeSpeed: 40
+// }
+
+// var typed = new Typed('.element', options)
