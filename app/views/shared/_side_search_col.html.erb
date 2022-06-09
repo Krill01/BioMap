@@ -1,5 +1,7 @@
 <div class="filter-column">
-  <%= image_tag('logo.svg')%>
+  <%= link_to root_path do %>
+    <%= image_tag('logo.svg')%>
+   <% end %>
   <h3>Catégories</h3>
   <div class="cat-items" >
     <% CategoryMapper::MAPPING.each do |category_id, category|  %>
