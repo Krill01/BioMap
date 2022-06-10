@@ -53,8 +53,8 @@
   justify-content: center;
 }
 .check + label:hover {
-  opacity: 0.6;
-  background-color: rgba(255, 255, 255, 0.9);
+  color: white;
+  background-color: rgba(255, 98, 48, 0.96);
 }
 .check:checked + label {
   color: white;
