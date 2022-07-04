@@ -71,11 +71,13 @@
   border: 1px solid rgba(56, 62, 63, 0.28);
   border-radius: 7px;
   min-height: 200px;
+  padding: 0 16px;
 
   .itinary-title{
     display:flex;
     justify-content: center;
   }
+
 
   h3{
     box-shadow: inset 0 -0.4em 0 #b6d2a8;
@@ -83,6 +85,10 @@
 
     left: 3rem;
     // position: relative;
+  }
+  p {
+    color: $font-color;
+    text-align: center;
   }
 
   .fa-location-arrow{
@@ -122,7 +128,6 @@
 }
 
 ol {
-  padding-top: 1rem;
   padding-bottom: 1rem;
   color: $font-color;
   li{

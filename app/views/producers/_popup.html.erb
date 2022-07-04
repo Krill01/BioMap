@@ -1,7 +1,11 @@
 <div>
   <div class="popup-banner"
-       data-nav-target='card'>
-    <h3><%= producer['denominationcourante'] %></h3>
+      data-nav-target='card'>
+      <% if producer['denominationcourante'].present? %>
+        <h3><%= producer['denominationcourante'] %></h3>
+      <% else %>
+        <h3><%= producer['raisonSociale'] %></h3>
+      <% end %>
   </div>
   <div class="producer-infos">
     <div class="address">
@@ -61,6 +65,6 @@
     </div>
   </div>
   <div class="popup-footer">
-    <a class="navigation" href="<%= producer["nav_link"] %>" target="_blank">Itinéraire</a>
+    <a class="navigation" href="<%= producer["nav_link"] %>" target="_blank">J'y vais</a>
   </div>
 </div>

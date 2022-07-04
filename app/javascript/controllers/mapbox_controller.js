@@ -38,7 +38,7 @@ export default class extends Controller {
 
 // ===================================================================================================
   connect() {
-    window.bbb = this
+    window.xxx = this
     this.markers = []
     mapboxgl.accessToken = this.apiKeyValue
     this.center = this.locationValue
@@ -149,7 +149,7 @@ export default class extends Controller {
       this.updateCenter(pos.coords.latitude, pos.coords.longitude)
     })
   }
-  
+
   removeLoading() {
     this.loadingTarget.style.display = "none";
   }
