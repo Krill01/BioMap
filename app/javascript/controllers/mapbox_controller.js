@@ -38,6 +38,8 @@ export default class extends Controller {
 
 // ===================================================================================================
   connect() {
+    setTimeout(
+       7)
     window.xxx = this
     this.markers = []
     mapboxgl.accessToken = this.apiKeyValue
